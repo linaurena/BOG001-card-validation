@@ -72,11 +72,51 @@ header{
 }
 
 .card-view{
-  background-color: blue;
+  min-height: 85.75vh;
 }
 
 .card-view.hidden{
   display: none;
+}
+
+.credit-card{
+  min-height: 25vh;
+  min-width: 80vw;
+  background-color: #E0f3FF;
+  margin: 3rem;
+  margin-top: 5rem;
+  border-radius: 26px;
+}
+
+form{
+  min-height: 30vh;
+  margin: 3rem;
+  margin-top: 5rem;
+}
+
+label{
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+input{
+  font-size: 1.8rem;
+  margin-top: 16px;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.options{
+  display: flex;
+}
+
+.how-btn{
+  margin-top: 1vh;
+  margin-left: 1vh;
+}
+.check-btn{
+  margin-top: 1vh;
+  margin-left: 1vh;
 }
 
 footer{
