@@ -11,21 +11,33 @@ const validator = {
     let oddPosition = '';  //[0]
     let evenPosition = ''; //[1]
 
-    // Create an array with odd position array
+    // Odd position
     for (let i = 0; i <= arrayReverse.length; i += 2) {
-      oddPosition += i
+      oddPosition += i;
     }
-    console.log(oddPosition);
+    //console.log(oddPosition);
 
     // Even position
     for (let i = 1; i <= arrayReverse.length; i += 2) {
       evenPosition += i;
     }
-    console.log(evenPosition)
+    //console.log(evenPosition)
 
+    let splitEvenPosition = evenPosition.split('');
+    //console.log(splitEvenPosition)
 
-    let multiplyEvenPosition = evenPosition.forEach * 2
-    console.log(multiplyEvenPosition)
+    splitEvenPosition.forEach(function(number) {
+      number = number * 2;
+
+      // Numbers with 2 digits are reduced
+      if (number > 9) {
+       number = number.toString().split('');
+       number = parseInt(number[0]) + parseInt(number[1]);
+      }
+      console.log(number)
+    })
+
+    console.log(splitEvenPosition)
 
   },
 
