@@ -5,7 +5,7 @@
 const validator = {
   isValid: (creditCardNumber) => {
     const arrayReverse = creditCardNumber.split('').reverse();
-    console.log(arrayReverse);
+    //console.log(arrayReverse);
 
     // Position variables
     let oddPosition = '';  //[0]
@@ -15,29 +15,39 @@ const validator = {
     for (let i = 0; i <= arrayReverse.length; i += 2) {
       oddPosition += i;
     }
-    //console.log(oddPosition);
+    console.log(oddPosition);
 
     // Even position
     for (let i = 1; i <= arrayReverse.length; i += 2) {
       evenPosition += i;
     }
-    //console.log(evenPosition)
+    console.log(evenPosition)
 
     let splitEvenPosition = evenPosition.split('');
-    //console.log(splitEvenPosition)
+    console.log(splitEvenPosition)
 
     splitEvenPosition.forEach(function(number) {
-      number = number * 2;
+      let multiplyNumber = number * 2;
+      console.log(multiplyNumber)
+      let newNumber = multiplyNumber;
+      let newArrayNumber = [];
 
       // Numbers with 2 digits are reduced
-      if (number > 9) {
-       number = number.toString().split('');
-       number = parseInt(number[0]) + parseInt(number[1]);
+      if (newNumber > 9) {
+        newNumber = newNumber.toString().split('');
+        newNumber = parseInt(newNumber[0]) + parseInt(newNumber[1]);
+        newArrayNumber.push(newNumber);
+        //console.log(newArrayNumber)
       }
-      console.log(number)
+      else {
+        newNumber = newNumber;
+        newArrayNumber.push(newNumber);
+        //console.log(newArrayNumber)
+      }
+      console.log(newArrayNumber)
     })
 
-    console.log(splitEvenPosition)
+    //console.log(splitEvenPosition)
 
   },
 
