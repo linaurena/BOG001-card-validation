@@ -31,6 +31,14 @@ creditCardNumber.addEventListener('keyup', (e) => {
 
 const checkBtn = document.getElementById('check');
 
-checkBtn.addEventListener('click', function(){
-  console.log('yeee');
-})
+function alertOfValidation() {
+  const isValid = validator.isValid(creditCardNumber.value)
+
+  if (isValid === true){
+    alert('Your credit card is valid');
+  } else {
+    alert('Your credit card is not valid');
+  }
+}
+
+checkBtn.addEventListener('click', alertOfValidation);
