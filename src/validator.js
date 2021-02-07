@@ -5,7 +5,6 @@
 const validator = {
   isValid: (creditCardNumber) => {
     const arrayReverse = creditCardNumber.split('').reverse();
-    //console.log(arrayReverse);
 
     // Position variables
     let oddPosition = '';  //[0]
@@ -15,40 +14,51 @@ const validator = {
     for (let i = 0; i <= arrayReverse.length; i += 2) {
       oddPosition += i;
     }
-    console.log(oddPosition);
 
     // Even position
     for (let i = 1; i <= arrayReverse.length; i += 2) {
       evenPosition += i;
     }
-    console.log(evenPosition)
+
+    let splitOddPosition = oddPosition.split('');
+
+    function convertToNumber(number) {
+      return Number(number);
+    }
+
+    const oddPositionArray = splitOddPosition.map(convertToNumber);
 
     let splitEvenPosition = evenPosition.split('');
-    console.log(splitEvenPosition)
 
-    splitEvenPosition.forEach(function(number) {
-      let multiplyNumber = number * 2;
-      console.log(multiplyNumber)
-      let newNumber = multiplyNumber;
-      let newArrayNumber = [];
+    function multiply(number) {
+      return number * 2;
+    }
 
-      // Numbers with 2 digits are reduced
-      if (newNumber > 9) {
-        newNumber = newNumber.toString().split('');
-        newNumber = parseInt(newNumber[0]) + parseInt(newNumber[1]);
-        newArrayNumber.push(newNumber);
-        //console.log(newArrayNumber)
+    const multipliedNumber = splitEvenPosition.map(multiply);
+
+    function reduceTwoDigits(multipliedNumber) {
+      if (multipliedNumber > 9) {
+        multipliedNumber = multipliedNumber.toString().split('');
+        multipliedNumber = parseInt(multipliedNumber[0]) + parseInt(multipliedNumber[1]);
       }
       else {
-        newNumber = newNumber;
-        newArrayNumber.push(newNumber);
-        //console.log(newArrayNumber)
+        multipliedNumber = multipliedNumber;
       }
-      console.log(newArrayNumber)
-    })
+      return multipliedNumber;
+    }
 
-    //console.log(splitEvenPosition)
+    const evenPositionArray = multipliedNumber.map(reduceTwoDigits);
 
+    const completeArray = oddPositionArray.concat(evenPositionArray)
+    let total = completeArray.reduce((a, b) => a + b, 0);
+    let residue = total % 10;
+
+    if (residue === 0) {
+      return true;
+    }
+    else {
+      return false;
+    }
   },
 
 
