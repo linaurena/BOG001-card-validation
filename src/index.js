@@ -27,6 +27,12 @@ creditCardNumber.addEventListener('keyup', (e) => {
   console.log(e)
 })
 
+// Message alert
+
+const validAlert = document.getElementById('validAlert');
+const invalidAlert = document.getElementById('invalidAlert');
+////////// Here will be a function with modal
+
 // Check it btn
 
 const checkBtn = document.getElementById('check');
