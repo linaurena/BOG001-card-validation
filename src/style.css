@@ -73,6 +73,7 @@ header{
 
 .card-view{
   min-height: 85.75vh;
+  padding-top: 3rem;
 }
 
 .card-view.hidden{
@@ -84,7 +85,7 @@ header{
   min-width: 80vw;
   background-color: #E0f3FF;
   margin: 3rem;
-  margin-top: 5rem;
+  margin-top: 0rem;
   border-radius: 26px;
 }
 
@@ -117,6 +118,33 @@ input{
 .check-btn{
   margin-top: 1vh;
   margin-left: 1vh;
+}
+
+.credit-card-alert{
+  min-height: 100vh;
+  background-color: rgba(105, 105, 105, 0.5);
+  padding-top: 30vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.credit-card-alert.hidden{
+  display: none;
+}
+
+.credit-card-box{
+  height: 30vh;
+  width: 80vw;
+  display: block;
+  margin: auto;
+  background-color: dodgerblue;
+}
+
+#root{
+  font-size: 2.4rem;
 }
 
 footer{
